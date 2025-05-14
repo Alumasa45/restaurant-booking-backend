@@ -1,2 +1,3 @@
 # Ignore Firebase service account JSON file
 src/config/firebaseServiceAccount.json
+node_modules
