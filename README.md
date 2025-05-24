@@ -1,6 +1,6 @@
-#  Restaurant Booking System
+# Restaurant Booking System
 
-##  Overview
+## Overview
 
 The **Restaurant Booking System** is a modern full-stack web application designed to streamline restaurant reservations. It allows users to book tables, manage their reservations, and receive real-time updates. Admins have access to a dedicated dashboard to oversee bookings, users, and system notifications.
 
@@ -8,20 +8,25 @@ This project combines the power of **Node.js** and **Express.js** on the backend
 
 ---
 
-##  Features
+## Features
 
-*  Secure user registration and login with JWT authentication
-*  Easy table booking and reservation management
-*  Real-time notifications for new bookings and status updates (via Firebase & Socket.IO)
-*  Admin dashboard to manage users and bookings
-*  Payment processing support (placeholder for future integration)
-*  Optional AI features via OpenAI API
+*  Secure user registration and login with JWT authentication
+
+*  Easy table booking and reservation management
+
+*  Real-time notifications for new bookings and status updates (via Firebase & Socket.IO)
+
+*  Admin dashboard to manage users and bookings
+
+*  Payment processing support (placeholder for future integration)
+
+*  Optional AI features via OpenAI API
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-###  Backend
+### Backend
 
 * **Node.js**
 * **Express.js**
@@ -31,7 +36,7 @@ This project combines the power of **Node.js** and **Express.js** on the backend
 * **JWT (JSON Web Tokens)**
 * **OpenAI API** *(optional)*
 
-###  Frontend
+### Frontend
 
 * **React.js**
 * **Axios**
@@ -39,9 +44,9 @@ This project combines the power of **Node.js** and **Express.js** on the backend
 
 ---
 
-##  Getting Started
+## Getting Started
 
-###  Prerequisites
+### Prerequisites
 
 Ensure the following are installed on your machine:
 
@@ -51,12 +56,12 @@ Ensure the following are installed on your machine:
 
 ---
 
-###  Installation & Setup
+### Installation & Setup
 
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Alumasa45/restaurant-booking-backend.git
+git clone <repository-url>
 ```
 
 ---
@@ -103,7 +108,7 @@ The backend will run at: [http://localhost:5000](http://localhost:5000)
 
 ---
 
-###  Frontend Setup
+### Frontend Setup
 
 #### 1. Navigate to Frontend Directory
 
@@ -129,7 +134,7 @@ The frontend will be available at: [http://localhost:3000](http://localhost:3000
 
 ## API Endpoints
 
-###  Authentication
+### Authentication
 
 | Method | Endpoint             | Description             |
 | ------ | -------------------- | ----------------------- |
@@ -145,15 +150,46 @@ The frontend will be available at: [http://localhost:3000](http://localhost:3000
 | PUT    | `/api/bookings/:id/status` | Update booking status         |
 | DELETE | `/api/bookings/:id`        | Delete a booking              |
 
-### 🔔 Notifications
+### Notifications
 
 | Method | Endpoint             | Description               |
 | ------ | -------------------- | ------------------------- |
 | GET    | `/api/notifications` | Fetch admin notifications |
 
+### AI Endpoint *(Optional)*
+
+| Method | Endpoint      | Description                           |
+| ------ | ------------- | ------------------------------------- |
+| POST   | `/api/ai/ask` | Send a prompt to ChatGPT (if enabled) |
+
+#### Request Example:
+
+```http
+POST /api/ai/ask
+{
+  "message": "Suggest a romantic dinner table setup."
+}
+```
+
+#### Response Example (if enabled):
+
+```json
+{
+  "response": "You could use candlelight, soft music, and..."
+}
+```
+
+#### Response Example (if disabled):
+
+```json
+{
+  "error": "AI feature is currently disabled because the API key is missing."
+}
+```
+
 ---
 
-##  Real-Time Features
+## Real-Time Features
 
 This project utilizes **Socket.IO** for real-time communication. When running, the system will support:
 
@@ -164,18 +200,54 @@ Ensure your Socket.IO server is properly configured and running with the backend
 
 ---
 
-##  Contributing
+## AI Features (Optional)
+
+This project includes optional AI capabilities powered by the OpenAI API. These features can be used to:
+
+* Automatically respond to user queries
+* Enhance admin assistance with smart suggestions
+* Provide intelligent booking feedback (future roadmap)
+
+### Environment Setup for AI
+
+To enable AI features, add the following to your `.env` file:
+
+```env
+OPENAI_API_KEY=your_openai_api_key
+```
+
+If you do **not** provide a valid `OPENAI_API_KEY`, the AI features will:
+
+* Not initialize the OpenAI API client
+* Skip or disable AI-related routes
+* Respond gracefully with fallback messages like:
+
+```json
+{
+  "error": "AI feature is currently disabled because the API key is missing."
+}
+```
+
+This ensures the backend runs safely without requiring AI configuration.
+
+---
+
+## Contributing
 
 We welcome all contributions! If you have ideas, feature requests, or found bugs, feel free to:
 
-*  Open an issue
-*  Submit a pull request
+* Open an issue
+* Submit a pull request
 
+---
 
+## License
 
+This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE) file for details.
 
+---
 
-##  Acknowledgments
+## Acknowledgments
 
 Thanks to the developers and tools that made this project possible:
 
