@@ -108,7 +108,7 @@ The backend will run at: [http://localhost:5000](http://localhost:5000)
 #### 1. Navigate to Frontend Directory
 
 ```bash
-cd ../restaurant-booking-frontend
+cd restaurant-booking-frontend
 ```
 
 #### 2. Install Frontend Dependencies
